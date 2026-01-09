@@ -1,0 +1,43 @@
+[project]
+name = "spacetitanic"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Adam Larson",email = "admlars2@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11, <3.13"
+dependencies = [
+    "pydantic-settings (>=2.12.0,<3.0.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "scipy (>=1.16.3,<2.0.0)",
+    "plotly (>=6.5.0,<7.0.0)",
+    "nbformat (>=5.10.4,<6.0.0)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "tensorflow==2.19.0"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^7.1.0"
+jupyterlab = "^4.5.1"
+
+[tool.poetry.group.tfdf]
+optional = true
+
+[tool.poetry.group.tfdf.dependencies]
+tensorflow-decision-forests = {version = "1.12.0", markers = "platform_system == 'Linux'"}
+
+[tool.poetry.group.gpu]
+optional = true
+
+[tool.poetry.group.gpu.dependencies]
+tensorflow = {version = "2.19.0", extras = ["and-cuda"], markers = "platform_system == 'Linux'"}
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
