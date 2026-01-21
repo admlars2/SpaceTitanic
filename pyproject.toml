@@ -15,7 +15,8 @@ dependencies = [
     "plotly (>=6.5.0,<7.0.0)",
     "nbformat (>=5.10.4,<6.0.0)",
     "scikit-learn (>=1.8.0,<2.0.0)",
-    "tensorflow==2.19.0"
+    "tensorflow==2.19.0",
+    "catboost (>=1.2.8,<2.0.0)"
 ]
 
 [tool.poetry]
